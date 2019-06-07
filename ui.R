@@ -6,6 +6,10 @@
 # You can run the application by clicking
 # the 'runApp()' fiunction.
 #
+# To use the already published application:
+#
+#   https://genfrenot.shinyapps.io/Shiny/ 
+#
 # Find out more about building applications with Shiny here:
 #
 #    http://shiny.rstudio.com/
