@@ -1,0 +1,13 @@
+name: Shiny
+title: Shiny
+username:
+account: genfrenot
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 971296
+bundleId: 2138817
+url: https://genfrenot.shinyapps.io/Shiny/
+when: 1559946504.48162
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: app.R
