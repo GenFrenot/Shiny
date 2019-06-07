@@ -20,25 +20,39 @@ data("islands")
 # the island name, the size in square miles and in number of football fields
 shinyServer(
     function(input, output) {
+        
+        # reactive function to get the island size in square miles 
+        mySizeFun <- reactive ({ 
+            
+                # calculating the island size in square miles based on the ui input:
+                # get the selected island size out of the "islands" data set
+                ifelse(is.null(input$inputValue)
+                      ,0
+                      ,as.numeric(islands[input$inputValue])
+                )
+            })
+        
+        # reactive function to get the nb of football fields
+        myNbfieldsFun <- reactive({ 
+            
+                # the island size in number of football fields
+                # 1 square miles represents the size of 484 football fields
+                ifelse(is.null(input$inputValue)
+                      ,0
+                      ,format(islands[input$inputValue]*484
+                                              , big.mark="'")
+                )
+            })
+        
         # the island name
-        output$island <- renderPrint({input$inputValue})
+        output$island <- renderPrint({ input$inputValue })
         
-        # the island size in square miles out of the "islands" data set
-        output$size <- renderPrint({
-                                ifelse(is.null(input$inputValue)
-                                  ,0
-                                  ,as.numeric(islands[input$inputValue])
-                                  )
-                            })
+        # the island size in square miles 
+        output$size <- renderPrint({ mySizeFun() })
         
-        # the island size in number of football fields
-        # 1 square miles represents the size of 484 football fields
-        output$nbfields <- renderPrint({
-                                (ifelse(is.null(input$inputValue)
-                                       ,0
-                                       ,format(islands[input$inputValue]*484
-                                               , big.mark="'")
-                                ))
-                            })        
+        # the island size in nb of football fields
+        output$nbfields <- renderPrint({ myNbfieldsFun()  })
+        
+        
     }
 )

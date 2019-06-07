@@ -12,16 +12,17 @@
 #
 
 # This is the User Interface for dataset viewer application
-shinyUI(
+shinyUI(fluidPage(
     pageWithSidebar(
         # Application title
         headerPanel("Destination Island"),
         
         sidebarPanel(
+            
+            # input in the form of a pulldown list widget
             selectInput('inputValue', 'Pick up your favorite destintation'
                         , names(islands)
-                        , selected = "Tasmania"),
-            submitButton('Submit')
+                        , selected = "Tasmania")
         ),
         mainPanel(
             h3('Your dream island is'),
@@ -34,4 +35,4 @@ shinyUI(
             h4(' football fields!')
         )
     )
-)
+))
