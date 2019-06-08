@@ -56,7 +56,7 @@ shinyUI(fluidPage(
                     "The result will refresh automatically in the main panel.")),
             p("Source:"),
             p("All the sources for this application are available on GitHub: "),
-            a("https://github.com/GenFrenot/Shiny")
+            a(href = "https://github.com/GenFrenot/Shiny","https://github.com/GenFrenot/Shiny")
         )
     )
 ))
