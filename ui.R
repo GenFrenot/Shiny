@@ -53,8 +53,10 @@ shinyUI(fluidPage(
             p("Usage:"),
             p(paste("To proceed, go to the top left and select your dream island from the list. ",
                     "Then choose one measurement unit out of the four possibilities. ",
-                    "The result will refresh automatically in the main panel."))
-            
+                    "The result will refresh automatically in the main panel.")),
+            p("Source:"),
+            p("All the sources for this application are available on GitHub: "),
+            a("https://github.com/GenFrenot/Shiny")
         )
     )
 ))

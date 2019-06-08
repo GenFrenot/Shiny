@@ -73,5 +73,6 @@ The server reactively returns three variables to the interface:
 According to Wikipedia, the size of Sumatra is 473,481 square kilometers.
 <br>
 <br>Go and check whether the approximate converted size calculated by 'myConvertedSizeFun()' matches the value from the encyclopedia using <a href="https://genfrenot.shinyapps.io/Shiny/" class="uri">The Destination Island Application</a>
-
+<br>
+<br>Source for this presentation and the application on GitHub: https://github.com/GenFrenot/Shiny
 </div>
