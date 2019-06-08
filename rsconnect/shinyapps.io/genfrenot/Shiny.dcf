@@ -5,8 +5,8 @@ account: genfrenot
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 971296
-bundleId: 2138868
+bundleId: 2138982
 url: https://genfrenot.shinyapps.io/Shiny/
-when: 1559949250.6643
+when: 1559958493.46173
 asMultiple: FALSE
 asStatic: FALSE
