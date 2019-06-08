@@ -15,11 +15,6 @@
 #    http://shiny.rstudio.com/
 #
 
-units<-c("Acre"=1
-         ,"Hectare"=2
-         ,"Square Kilometer"=3
-         ,"Number of Football Field"=4)
-
 # This is the User Interface for dataset viewer application
 shinyUI(fluidPage(
     pageWithSidebar(
@@ -29,12 +24,15 @@ shinyUI(fluidPage(
         sidebarPanel(
             
             # input in the form of a pulldown list widget
-            selectInput('inputValue', 'Pick up your favorite destintation'
+            selectInput('inputValue', 'Pick up your favorite destination'
                         , names(islands)
                         , selected = "Tasmania"),
             radioButtons('conversion'
                                , 'Choose the unit to convert the Island Size into'
-                               , units
+                               , c("Acre"=1
+                                   ,"Hectare"=2
+                                   ,"Square Kilometer"=3
+                                   ,"Number of Football Field"=4)
             )
         ),
         mainPanel(
@@ -43,7 +41,7 @@ shinyUI(fluidPage(
             h4('It has a size of '),
             verbatimTextOutput("size"),
             h4('which represents also approximately:'),
-            verbatimTextOutput("nbfields"),
+            verbatimTextOutput("convertedSize"),
             hr(),
             p("Context:"),
             p(paste("This simple application uses the R data set 'island'",

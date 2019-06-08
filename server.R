@@ -55,7 +55,7 @@ shinyServer(
         })
         
         # reactive function to get the converted size
-        myNbfieldsFun <- reactive({ 
+        myConvertedSizeFun <- reactive({ 
             convertedSize <- round(islands[input$inputValue] * # islands data is in thousand square miles
                                    conversions[as.numeric(input$conversion)])* # convert to wished unit
                              1000 # multiply by thousand because the original data is in thousand square miles
@@ -76,7 +76,7 @@ shinyServer(
         output$size <- renderPrint({ mySizeFun() })
         
         # the island size in nb of football fields
-        output$nbfields <- renderPrint({ myNbfieldsFun()  })
+        output$convertedSize <- renderPrint({ myConvertedSizeFun()  })
         
         
     }
